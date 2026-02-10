@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Cygre';
+    src: url('../fonts/Cygre-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cygre';
+    src: url('../fonts/Cygre-Bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Grid Type';
+    src: url('../fonts/russian\ baa.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Grid Type';
+    src: url('../fonts/russian-baa.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
