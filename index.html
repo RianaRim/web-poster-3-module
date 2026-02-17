@@ -9,7 +9,9 @@
     <script defer src="javascripts/scripts.js"></script>
 </head>
 <body>
-    <div class="customCursor"></div>
+    <div class="customCursor">
+        <div class="customCursor2"></div>
+    </div>
     <!-- секция 1: шапка -->
     <section class="header">
         <p class="baa">,FF!</p>
@@ -17,9 +19,9 @@
         <div class="eyeMouse">
             <div id="eye"></div>
         </div>
-        <p id="text2"><a href="#main">главная</a></p>
-        <p id="text3">одееежда</p>
-        <p id="text4">подношения</p>
+        <a id="text2" class="links" href="#main">главная</a>
+        <a id="text3" class="links" href="#shop">одееежда</a>
+        <a id="text4" class="links" href="#offering">подношения</a>
         <p id="text5">подвал</p>
         <div class="glassmorph"></div>
     </section>
@@ -40,11 +42,43 @@
             <a id="littleRam" onclick="myAudioFunction('R');"> <img src="images/sound ram.png" alt=""></a>
         </div>
      </section>
+     <!-- секция 2: второй экран -->
      <section class="secondScreen">
         <div class="content_4">
             <p id="text10">LJ,HJ GJ;FKJDFNM</p>
             <p id="text11">2026</p>
         </div>
      </section>
+     <!-- секция 2: третий экран -->
+      <section class="thirdScreen">
+        <div class="content_5">
+            <p id="shop">одееежда</p>
+            <img id="arrow" src="images/arrow1.svg" alt="стрелка">
+        </div>
+        <div class="content_6">
+            <img id="shop1" src="images/shop1.png" alt="плащ">
+            <img id="shop2" src="images/shop2.png" alt="шапка">
+            <img id="shop3" src="images/shop3.png" alt="фигурка">
+        </div>
+        <img id="ramHelper" src="images/ramHelper.png" alt="баран-помощник">
+        <div class="content_7"></div>
+      </section>
+      <!-- секция 3: первый экран -->
+       <section class="forthScreen">
+        <div class="content_8">
+            <p id="offering">подношения</p>
+            <img id="arrow" src="images/arrow1.svg" alt="стрелка">
+        </div>
+        <div class="content_9">
+            <img id="offer1" src="images/baseOffer.png" alt="базовое подношение">
+            <img id="offer2" src="images/coolOffer.png" alt="крутое подношение">
+            <img id="offer3" src="images/lambOffer.png" alt="баранье подношение">
+        </div>
+        <div class="content_10">
+            <p id="text12">БАЗОВОЕ ПОДНОШЕНИЕ</p>
+            <p id="text13">КРУТОЕ ПОДНОШЕНИЕ</p>
+            <p id="text14">БАРАНЬЕ ПОДНОШЕНИЕ</p>
+        </div>
+       </section>
 </body>
 </html>
