@@ -130,6 +130,51 @@ a{
     z-index: -1;
 }
 
+/* изображение по курсору */
+.changeImage {
+    width: 100%;
+    height: 0vh;
+    position: absolute;
+    z-index: 1;
+}
+
+.imageBox {
+    position: fixed;
+    top: 23vw;
+    left: 82vw;
+    width: 17vw;
+    height: 26vw;
+    transition: 0.3s all ease-in-out;
+    user-select: none;
+    /* background-color: #0ADB81; */
+}
+
+.imageBox:hover {
+    opacity: 0.4;
+}
+
+.imageBoxEl {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    opacity: 0;
+}
+
+.imageBox1 {
+    background-image: url('../images/cursorImage1.png');
+}
+.imageBox2 {
+    background-image: url('../images/cursorImage2.png');
+}
+.imageBox3 {
+    background-image: url('../images/cursorImage3.png');
+}
+.imageBox4 {
+    background-image: url('../images/cursorImage4.png');
+}
+
+
 /* первый экран */
 .firstScreen {
     width: 100%;
@@ -211,6 +256,7 @@ a{
     user-select: none;
 }
 
+/* второй экран */
 .secondScreen {
     width: 100%;
     height: 11vw;
@@ -243,6 +289,7 @@ a{
     animation: changeColor 1.5s linear infinite;
 }
 
+/* третий экран */
 .thirdScreen {
     width: 100%;
     height: 70vw;
@@ -302,6 +349,7 @@ a{
     height: 32vw;
 }
 
+/* четвёртый экран */
 .forthScreen {
     width: 100%;
     height: 50vw;
@@ -363,6 +411,8 @@ a{
     gap: 1vw;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding-left: 0.5vw;
 }
 
 #text12, #text13, #text14 {
@@ -371,4 +421,150 @@ a{
     font-size: 2.2vw;
     color: white;
     user-select: none;
+    margin-left: 3.3vw;
 }
+
+#text13 {
+    margin-left: 5vw;
+}
+
+#text14 {
+    margin-left: 5vw;
+}
+
+.content_11 {
+    width: 100%;
+    height: 4.5vw;
+    gap: 1vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 8.5vw;
+    padding-right: 8.5vw;
+}
+
+#text15, #text16, #text17 {
+    font-family: 'Cygre';
+    font-weight: normal;
+    font-size: 1.5vw;
+    color: #444;
+    user-select: none;
+    text-align: center;
+}
+
+#text15 {
+    margin-left: 2.5vw;
+}
+#text16 {
+    margin-left: 18vw;
+}
+#text17 {
+    margin-left: 20.5vw;
+}
+
+.basement {
+    width: 100%;
+    height: 39vw;
+    user-select: none;
+}
+
+.content_12 {
+    width: 100%;
+    height: 8vw;
+    gap: 1vw;
+    padding-top: 3.5vw;
+    display: flex;
+    flex-direction: row;
+}
+
+#basement {
+    font-family: 'Cygre';
+    font-size: 1.3vw;
+    color: white;
+    padding-left: 2.1vw;
+    padding-top: 1.5vw;
+    user-select: none;
+}
+
+#arrow {
+    height: 2vw;
+    width: 2vw;
+    margin-top: 2vw;
+}
+
+.content_13 {
+    width: 100%;
+    height: 8vw;
+    gap: 0.3vw;
+    padding-top: 0.7vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#text18, #text19, #text20 {
+    font-family: 'Cygre';
+    font-weight: 600;
+    font-size: 1.6vw;
+    color: white;
+    user-select: none;
+    margin-left: 1.8vw;
+}
+
+#text19 {
+    color: #444;
+}
+
+#text20 {
+    color: #444;
+}
+
+#text21, #text22, #text23, #text24 {
+    font-family: 'Cygre';
+    font-weight: 600;
+    font-size: 1.6vw;
+    padding-left: 7vw;
+    color: white;
+    user-select: none;
+    transition: 0.3s all ease-in-out;
+    user-select: none;
+}
+
+#text21:hover, #text22:hover, #text23:hover, #text24:hover {
+    opacity: 0.4;
+}
+
+#text25 {
+    font-family: 'Cygre';
+    font-weight: normal;
+    font-size: 2vw;
+    padding-top: 0.5vw;
+    line-height: 1.6vw;
+    color: white;
+    user-select: none;
+}
+
+.content_14 {
+    width: 100%;
+    height: 23vw;
+    padding-top: 4vw;
+}
+
+#text26 {
+    font-family: 'Cygre';
+    font-weight: normal;
+    font-size: 18.5vw;
+    padding-left: 1vw;
+    color: white;
+    user-select: none;
+}
+
+.rectangle {
+    position: absolute;
+    width: 80.8%;
+    height: 2vw;
+    top: 210.1vw;
+    left: 16.7vw;
+    background-color: #0ADB81;
+}
+
