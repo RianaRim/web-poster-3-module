@@ -1,16 +1,47 @@
 // движение кастомного курсора за движением мыши
 cursorMove()
+// анимация кастомного курсора
 links()
+// изменение изображения по курсору
 changeImageByCursor()
+// кликабельные ссылки
+
+// слежение за курсором
+eyeAnimation()
+
+// слежение за курсором
+function eyeAnimation() {
+  let eyes = document.querySelectorAll('.eye')
+
+  document.addEventListener('mousemove', (e) => {
+    eyes.forEach((eye) => {
+      let eyeMouse = eye.getBoundingClientRect()
+
+      let eyeX = eyeMouse.left + eyeMouse.width / 2
+      let eyeY = eyeMouse.top + eyeMouse.height / 2
+
+      let eX = event.clientX - eyeX
+      let eY = event.clientY - eyeY
+
+      let position = Math.atan2(eY, eX)
+
+      let px = position * (10.6 / Math.PI)
+
+      eye.style.transform = `translate(${px}px)`
+    })
+  })
+}
+
+// кликабельные ссылки
 
 
 // передвижение кастомного курсора
-function cursorMove(){
-    const cursor = document.querySelector('.customCursor');
+function cursorMove() {
+  const cursor = document.querySelector('.customCursor')
 
-document.addEventListener('mousemove', (e) => {
-    cursor.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`
-})
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.transform = `translate(${e.pageX + 5}px, ${e.pageY + 5}px)`
+  })
 }
 
 
