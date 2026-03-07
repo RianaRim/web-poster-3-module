@@ -14,6 +14,9 @@ body {
     scroll-behavior: smooth;
 
 }
+html {
+  scroll-behavior: smooth;
+}
 .customCursor {
      position: absolute;
     top: 0;
@@ -75,6 +78,7 @@ a{
     flex-direction: row;
     align-items: center;
     position: fixed;
+    z-index: 1001;
 }
 
 .header .baa {
@@ -108,19 +112,32 @@ a{
     margin-left: 10.4vw;
 }
 
-.eyeMouse {
-    width: 4.5vw;
-    height: 2.4vw;
-    background-color: #0ADB81;
-    margin-left: 15vw;
-    align-content: center;
+.eyeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7.6vh;
 }
 
 .eye {
-    width: 2.25vw;
-    height: 1.2vw;
-    background-color: black;
-    margin-left: 1.1vw;
+  width: 4.5vw;
+  height: 2.4vw;
+  background: #0ADB81;
+  position: relative;
+  overflow: hidden;
+  margin-left: 15vw;
+  align-content: center;
+}
+
+.pupil {
+  width: 2.25vw;
+  height: 1.2vw;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
 }
 
 .glassmorph {
@@ -333,15 +350,58 @@ a{
 }
 
 .content_6 {
-    width: 100%;
-    height: 32vw;
-    padding-left: 0vw;
-    padding-right: 0vw;
-    padding-top: 1vw;
-    gap: 3vw;
-    display: flex;
-    flex-direction: row;
-    background-size: contain;
+  width: 100%;
+  height: 32vw;
+  padding-left: 0vw;
+  padding-right: 0vw;
+  padding-top: 1vw;
+  gap: 3vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.flipCard {
+  width: 35%;
+  min-height: 20vw;
+  perspective: 1000px;
+  background-color: transparent;
+  position: relative;
+}
+
+.flipCardWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.flipCard:hover .flipCardWrapper {
+    transform: rotateY(180deg);
+}
+
+.flipCardFront,
+.flipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flipCardFront {
+  z-index: 2;
+}
+
+.flipCardBack {
+  transform: rotateY(180deg);
+  background: #f0f0f0;
+}
+
+.flipCard:hover .flipCardWrapper {
+  transform: rotateY(180deg);
 }
 
 #ramHelper {

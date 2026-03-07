@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="icon" href="images/icon.png" type="images.png" >
     <script defer src="javascripts/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/[email protected]/examples/js/loaders/GLTFLoader.js"></script>
+
 </head>
 <body>
     <div class="customCursor">
@@ -16,8 +19,10 @@
     <section class="header">
         <p class="baa">,FF!</p>
         <p id="text1">Валерия Антонихина</p>
-        <div class="eyeMouse">
-            <div class="eye"></div>
+        <div class="eyeContainer">
+            <div class="eye">
+            <div class="pupil"></div>
+        </div>
         </div>
         <a id="text2" class="links" href="#main">главная</a>
         <a id="text3" class="links" href="#shop">одееежда</a>
@@ -49,6 +54,7 @@
             <p id="text9">ПРЕДАННЫЙ</p>
         </div>
         <div class="content_2">
+            <div id="ram3D"></div>
             <img id="ramBack" src="images/ram background.png" alt="бараний фон">
         </div>
         <div class="content_3">
@@ -70,7 +76,20 @@
             <img id="arrow" src="images/arrow1.svg" alt="стрелка">
         </div>
         <div class="content_6">
-            <img id="shop1" src="images/shop1.png" alt="плащ">
+            <article class="flipCard">
+    <div class="flipCardWrapper">
+      <!-- Лицевая сторона -->
+      <div class="flipCardFront">
+        <img id="shop1" src="images/shop1.png" alt="плащ">
+      </div>
+
+      <!-- Обратная сторона -->
+      <div class="flipCardBack">
+        <img src="images/shopScreen1.png" alt="описание плаща">
+      </div>
+    </div>
+  </article>
+            
             <img id="shop2" src="images/shop2.png" alt="шапка">
             <img id="shop3" src="images/shop3.png" alt="фигурка">
         </div>

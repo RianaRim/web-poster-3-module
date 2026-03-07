@@ -6,30 +6,110 @@ links()
 changeImageByCursor()
 // кликабельные ссылки
 
+// 3-д персонаж
+ramCharacter()
 // слежение за курсором
 eyeAnimation()
 
+
+// 3-д персонаж
+function ramCharacter() {
+  // Сцена, камера, рендерер
+  const scene = new THREE.Scene()
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  )
+  const renderer = new THREE.WebGLRenderer({ antialias: true })
+  renderer.setSize(window.innerWidth, window.innerHeight)
+  document.getElementById('ram3D').appendChild(renderer.domElement)
+
+  // Освещение
+  const light = new THREE.AmbientLight(0x404040)
+  scene.add(light)
+
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5)
+  directionalLight.position.set(1, 1, 1).normalize()
+  scene.add(directionalLight)
+
+  // Загрузка 3D‑модели (формат GLTF)
+  const loader = new THREE.GLBoader()
+  let model
+
+  loader.load(
+    '3d model/ramFigure.glb',
+    function (glb) {
+      model = glb.scene
+      scene.add(model)
+    },
+    undefined,
+    function (error) {
+      console.error('Ошибка загрузки модели:', error)
+    }
+  )
+
+  // Позиция камеры
+camera.position.z = 15;
+
+// Анимация вращения
+function animate() {
+  requestAnimationFrame(animate);
+}
+
+ if (model) {
+    model.rotation.y += 0.01; // скорость вращения
+  }
+
+  renderer.render(scene, camera);
+}
+
+animate();
+
+// Адаптация под размер окна
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+
 // слежение за курсором
 function eyeAnimation() {
-  let eyes = document.querySelectorAll('.eye')
+ document.addEventListener('DOMContentLoaded', function () {
+   const eye = document.querySelector('.eye')
+   const pupil = document.querySelector('.pupil')
 
-  document.addEventListener('mousemove', (e) => {
-    eyes.forEach((eye) => {
-      let eyeMouse = eye.getBoundingClientRect()
+   const eyeRect = eye.getBoundingClientRect()
+   const eyeCenterX = eyeRect.width / 2
+   const eyeCenterY = eyeRect.height / 2
 
-      let eyeX = eyeMouse.left + eyeMouse.width / 2
-      let eyeY = eyeMouse.top + eyeMouse.height / 2
+   const maxMove = 8
 
-      let eX = event.clientX - eyeX
-      let eY = event.clientY - eyeY
+   document.addEventListener('mousemove', function (e) {
+     const mouseX = e.clientX - eyeRect.left
+     const mouseY = e.clientY - eyeRect.top
 
-      let position = Math.atan2(eY, eX)
+     const deltaX = mouseX - eyeCenterX
+     const deltaY = mouseY - eyeCenterY
 
-      let px = position * (10.6 / Math.PI)
+          const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY)
 
-      eye.style.transform = `translate(${px}px)`
-    })
-  })
+     
+     let moveX, moveY
+     if (distance > maxMove) {
+       const scale = maxMove / distance
+       moveX = deltaX * scale
+       moveY = deltaY * scale
+     } else {
+       moveX = deltaX
+       moveY = deltaY
+     }
+
+     pupil.style.transform = `translate(-50%, -50%) translate(${moveX}px, ${moveY}px)`
+   })
+ })
 }
 
 // кликабельные ссылки
