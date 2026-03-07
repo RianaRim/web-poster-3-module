@@ -269,12 +269,13 @@ a{
 }
 
 #littleRam {
-    position: absolute;
-    top: 24vw;
-    left: 92vw;
-    opacity: 1;
-    z-index: -1;
-    user-select: none;
+  position: absolute;
+  top: 24vw;
+  left: 92vw;
+  opacity: 1;
+  z-index: 1;
+  user-select: none;
+  cursor: none;
 }
 
 #time {

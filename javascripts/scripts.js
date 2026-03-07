@@ -7,72 +7,37 @@ changeImageByCursor()
 // кликабельные ссылки
 
 // 3-д персонаж
-ramCharacter()
+// ramCharacter()
+// звук барашка
+ramSound()
 // слежение за курсором
 eyeAnimation()
 
 
+
+// звук барашка
+function ramSound() {
+document.addEventListener('DOMContentLoaded', function () {
+  const ramImage = document.getElementById('littleRam')
+  const ramSound = document.getElementById('ramSound')
+
+  // 2. Добавляем обработчик клика
+  ramImage.addEventListener('click', function () {
+    // 3. Останавливаем текущее воспроизведение (если есть)
+    ramSound.currentTime = 0
+
+    // 4. Воспроизводим звук
+    ramSound.play().catch((error) => {
+      console.error('Ошибка воспроизведения звука:', error)
+    })
+  })
+})
+}
+
+
 // 3-д персонаж
 function ramCharacter() {
-  // Сцена, камера, рендерер
-  const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  )
-  const renderer = new THREE.WebGLRenderer({ antialias: true })
-  renderer.setSize(window.innerWidth, window.innerHeight)
-  document.getElementById('ram3D').appendChild(renderer.domElement)
-
-  // Освещение
-  const light = new THREE.AmbientLight(0x404040)
-  scene.add(light)
-
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5)
-  directionalLight.position.set(1, 1, 1).normalize()
-  scene.add(directionalLight)
-
-  // Загрузка 3D‑модели (формат GLTF)
-  const loader = new THREE.GLBoader()
-  let model
-
-  loader.load(
-    '3d model/ramFigure.glb',
-    function (glb) {
-      model = glb.scene
-      scene.add(model)
-    },
-    undefined,
-    function (error) {
-      console.error('Ошибка загрузки модели:', error)
-    }
-  )
-
-  // Позиция камеры
-camera.position.z = 15;
-
-// Анимация вращения
-function animate() {
-  requestAnimationFrame(animate);
 }
-
- if (model) {
-    model.rotation.y += 0.01; // скорость вращения
-  }
-
-  renderer.render(scene, camera);
-}
-
-animate();
-
-// Адаптация под размер окна
-window.addEventListener('resize', () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
 
 
 // слежение за курсором

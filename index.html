@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="icon" href="images/icon.png" type="images.png" >
     <script defer src="javascripts/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/[email protected]/examples/js/loaders/GLTFLoader.js"></script>
-
 </head>
 <body>
     <div class="customCursor">
@@ -48,19 +45,24 @@
      <section class="firstScreen">
         <div class="content_1">
             <p id="main">главная</p>
-            <p id="text6">НОВЫЙ БАРАН</p>
-            <p id="text7">БРАТ-БАРАН</p>
-            <p id="text8">БАРАН-СТАРОВЕР</p>
-            <p id="text9">ПРЕДАННЫЙ</p>
+            <a id="newRam" class="links" href=""></a><p id="text6">НОВЫЙ БАРАН</p>
+            <a id="broRam" class="links" href=""></a><p id="text7">БРАТ-БАРАН</p>
+            <a id="oldRam" class="links" href=""></a><p id="text8">БАРАН-СТАРОВЕР</p>
+            <a id="godRam" class="links" href=""></a><p id="text9">ПРЕДАННЫЙ</p>
         </div>
         <div class="content_2">
             <div id="ram3D"></div>
             <img id="ramBack" src="images/ram background.png" alt="бараний фон">
         </div>
         <div class="content_3">
-            <p id="time">0:00:00</p>
-            <a id="littleRam"> <img src="images/sound ram.png" alt=""></a>
-        </div>
+  <p id="time">0:00:00</p>
+  <a id="littleRam" class="links">
+    <img src="images/sound ram.png" alt="Барашек">
+  </a>
+  <audio id="ramSound" preload="auto">
+    <source src="sounds/72df0556a033e9b.mp3" type="audio/mpeg">
+  </audio>
+</div>
      </section>
      <!-- секция 2: второй экран -->
      <section class="secondScreen">
