@@ -35,3 +35,39 @@
 		transform: translateY(-10px);
 	}
 }
+
+@keyframes ramWalk {
+    0%, 100% {
+        background-position-x: 0;
+    }
+    33% {
+        background-position-x: -345px;
+    }
+    66% {
+        background-position-x: -690px;
+    }
+}
+
+@keyframes ramMove {
+    0%, 100% {
+        left: 0;
+    }
+    25% {
+        left: 30%;
+    }
+    50% {
+        left: 80%;
+    }
+    75% {
+        left: 30%;
+    }
+}
+
+@keyframes jump {
+    0%, 20%, 80%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}

@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="icon" href="images/icon.png" type="images.png" >
     <script defer src="javascripts/scripts.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.139.0/build/three.module.js",
+          "OrbitControls": "https://unpkg.com/three@0.139.0/examples/jsm/controls/OrbitControls.js",
+          "GLTFLoader": "https://unpkg.com/three@0.139.0/examples/jsm/loaders/GLTFLoader.js",
+          "RectAreaLightUniformsLib": "https://unpkg.com/three@0.139.0/examples/jsm/lights/RectAreaLightUniformsLib.js"
+        }
+      }
+    </script>
+    <script defer src="javascripts/model.js" type="module"></script>
 </head>
 <body>
     <div class="customCursor">
@@ -51,7 +62,7 @@
             <a id="godRam" class="links" href=""></a><p id="text9">ПРЕДАННЫЙ</p>
         </div>
         <div class="content_2">
-            <div id="ram3D"></div>
+            <div class="ram3D"></div>
             <img id="ramBack" src="images/ram background.png" alt="бараний фон">
         </div>
         <div class="content_3">
@@ -130,13 +141,14 @@
             <p id="text18">cheburashkana <br>taburetke@gmail.com</p>
             <p id="text19">Нахожусь в Москве</p>
             <p id="text20">Живу в Беларуси</p>
-            <a id="text21" class="links" href="">INSTAGRAM</a>
-            <a id="text22" class="links" href="">TELEGRAM</a>
-            <a id="text23" class="links" href="">BEHANCE</a>
-            <a id="text24" class="links" href="">DPROFILE</a>
+            <a id="text21" class="links" href="https://www.instagram.com/riadez.ign/">INSTAGRAM*</a>
+            <a id="text22" class="links" href="https://t.me/Riana_RimUX">TELEGRAM</a>
+            <a id="text23" class="links" href="https://www.behance.net/Riana_Rim">BEHANCE</a>
+            <a id="text24" class="links" href="https://dprofile.ru/riana_rim">DPROFILE</a>
             <p id="text25">Спасибо, что <br>воспользовались <br>веб-плакатом!</p>
         </div>
         <div class="content_14">
+            <div class="ramSteps"></div>
             <div class="rectangle"></div>
             <p id="text26">@Riana_Rim</p>
         </div>
