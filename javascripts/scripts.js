@@ -12,7 +12,81 @@ changeImageByCursor()
 ramSound()
 // слежение за курсором
 eyeAnimation()
+// окошко по клику
+modalWindow()
+modalWindow2()
+// таймер страницы
+timeTracker()
 
+// таймер страницы
+function timeTracker() {
+  let startTime = Date.now()
+
+  function updateTimer() {
+    const elapsed = Date.now() - startTime
+    const seconds = Math.floor(elapsed / 1000)
+    const minutes = Math.floor(seconds / 60)
+    const hours = Math.floor(minutes / 60)
+
+
+    const formattedSeconds = (seconds % 60).toString().padStart(2, '0')
+    const formattedMinutes = (minutes % 60).toString().padStart(2, '0')
+    const formattedHours = hours.toString().padStart(2, '0')
+
+    document.getElementById('time').textContent =
+      `${formattedHours}:${formattedMinutes}:${formattedSeconds}`
+  }
+
+  setInterval(updateTimer, 1000)
+}
+
+function modalWindow2() {
+  let text7 = document.querySelector('#text7')
+  let mainScreen2 = document.querySelector('.mainScreen2')
+
+  text7.addEventListener('click', () => {
+    mainScreen2.style.display = 'block'
+  })
+
+  mainScreen2.addEventListener('click', () => {
+    mainScreen2.style.display = 'none'
+  })
+
+  text7.addEventListener('click', () => {
+    mainScreen2.className = 'mainScreen2 fade-in'
+  })
+
+  mainScreen2.addEventListener('click', () => {
+    mainScreen2.className = 'mainScreen2 fade-out'
+    setTimeout(() => {
+      mainScreen2.style.opacity = '0'
+    }, 300)
+  })
+}
+
+function modalWindow() {
+  let text6 = document.querySelector('#text6')
+  let mainScreen1 = document.querySelector('.mainScreen1')
+
+  text6.addEventListener('click', () => {
+    mainScreen1.style.display = 'block'
+  })
+
+  mainScreen1.addEventListener('click', () => {
+    mainScreen1.style.display = 'none'
+  })
+
+   text6.addEventListener('click', () => {
+     mainScreen1.className = 'mainScreen1 fade-in'
+   })
+
+   mainScreen1.addEventListener('click', () => {
+     mainScreen1.className = 'mainScreen1 fade-out'
+     setTimeout(() => {
+       mainScreen1.style.opacity = '0'
+     }, 300)
+   })
+}
 
 
 // звук барашка
@@ -158,8 +232,6 @@ function changeImageByCursor() {
         }
     })
 }
-
-// анимация времени
 
 
 // звук барана по клику

@@ -27,7 +27,7 @@ function initThree() {
     3000
   )
   // set это все координаты вместе, то есть x,y,z
-  camera.position.set(0, 50, 150) // ближе к центру
+  camera.position.set(0, 0, 180) // ближе к центру
   camera.lookAt(0, 0, 0) // смотрим в центр сцены
 
   // визуализатор

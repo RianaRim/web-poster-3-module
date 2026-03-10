@@ -157,7 +157,7 @@ a{
     width: 100%;
     height: 0vh;
     position: absolute;
-    z-index: 1;
+    z-index: 10;
 }
 
 .coords {
@@ -207,6 +207,56 @@ a{
     height: 46vw;
     display: flex;
     flex-direction: row;
+    position: relative;
+}
+
+.mainScreen1 {
+    position: absolute;
+    width: 40%;
+    left: 33%;
+    top: 10%;
+    display: none;
+    z-index: 50;
+    user-select: none;
+}
+
+.mainScreen1.fade-in {
+  animation: fadeIn 0.3s forwards;
+}
+
+.mainScreen1.fade-out {
+  animation: fadeOut 0.3s forwards;
+}
+
+.mainScreen2 {
+    position: absolute;
+    background-color: black;
+    width: 39vw;
+    height: 39vw;
+    left: 33%;
+    top: 10%;
+    display: none;
+    z-index: 50;
+    user-select: none;
+}
+
+.mainScreen2.fade-in {
+  animation: fadeIn 0.3s forwards;
+}
+
+.mainScreen2.fade-out {
+  animation: fadeOut 0.3s forwards;
+}
+
+.contentContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.videoRam, .textDiv_1, .textDiv_2 {
+    width: 100%;
 }
 
 .content_1 {
@@ -219,7 +269,7 @@ a{
   position: relative; 
   width: 37vw;
   height: 42vw;
-  overflow: hidden; 
+  /* overflow: hidden;  */
   user-select: none;
 }
 
@@ -274,13 +324,6 @@ a{
 
 #text6 {
     margin-top: 11vw;
-}
-
-#ramBack {
-    background-size: contain;
-    position: absolute;
-    width: 50vw;
-    left: 25vw;
 }
 
 #littleRam {
@@ -375,6 +418,24 @@ a{
   display: flex;
   justify-content: space-between;
 }
+.content_6_2 {
+  width: 100%;
+  height: 32vw;
+  padding-left: 0vw;
+  padding-right: 0vw;
+  padding-top: 1vw;
+  gap: 3vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+#shop1 {
+width: 100%;
+}
+
+#shopBack1 {
+    width: 100%;
+}
 
 .flipCard {
   width: 35%;
@@ -382,6 +443,10 @@ a{
   perspective: 1000px;
   background-color: transparent;
   position: relative;
+}
+
+.content_6_2 .flipCard {
+  width: 31.5%;
 }
 
 .flipCardWrapper {
@@ -412,7 +477,7 @@ a{
 }
 
 .flipCardBack {
-    width: 80%;
+    width: 103%;
   transform: rotateY(180deg);
   background: #f0f0f0;
 }
@@ -657,8 +722,7 @@ a{
     background-image: url('/images/3Steps.png');
     animation: ramWalk 0.8s infinite steps(1), 
     ramMove 12s ease-in-out infinite,
-    ramRotate 6s linear infinite, 
-    jump 3s ease-in-out 0s infinite;
+    ramRotate 6s linear infinite;
     transform-style: preserve-3d;
     perspective: 1000px;
 }
