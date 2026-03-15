@@ -15,8 +15,54 @@ eyeAnimation()
 // окошко по клику
 modalWindow()
 modalWindow2()
+modalWindow3()
 // таймер страницы
 timeTracker()
+// появление текста по ховеру
+hoverOpacity()
+hoverOpacity2()
+hoverOpacity3()
+
+// появление текста по ховеру
+function hoverOpacity() {
+  let button = document.querySelector('.hoverButton_1')
+  let quote = document.querySelector('.qoute_1')
+
+  button.addEventListener('mouseenter', () => {
+    quote.classList.add('visible')
+  })
+
+  button.addEventListener('mouseleave', () => {
+    quote.classList.remove('visible')
+  })
+}
+
+function hoverOpacity2() {
+  let button = document.querySelector('.hoverButton_2')
+  let quote = document.querySelector('.qoute_2')
+
+  button.addEventListener('mouseenter', () => {
+    quote.classList.add('visible')
+  })
+
+  button.addEventListener('mouseleave', () => {
+    quote.classList.remove('visible')
+  })
+}
+
+function hoverOpacity3() {
+  let button = document.querySelector('.hoverButton_3')
+  let quote = document.querySelector('.qoute_3')
+
+  button.addEventListener('mouseenter', () => {
+    quote.classList.add('visible')
+  })
+
+  button.addEventListener('mouseleave', () => {
+    quote.classList.remove('visible')
+  })
+}
+
 
 // таймер страницы
 function timeTracker() {
@@ -38,6 +84,30 @@ function timeTracker() {
   }
 
   setInterval(updateTimer, 1000)
+}
+
+function modalWindow3() {
+  let text8 = document.querySelector('#text8')
+  let mainScreen3 = document.querySelector('.mainScreen3')
+
+  text8.addEventListener('click', () => {
+    mainScreen3.style.display = 'block'
+  })
+
+  mainScreen3.addEventListener('click', () => {
+    mainScreen3.style.display = 'none'
+  })
+
+  text8.addEventListener('click', () => {
+    mainScreen3.className = 'mainScreen3 fade-in'
+  })
+
+  mainScreen3.addEventListener('click', () => {
+    mainScreen3.className = 'mainScreen3 fade-out'
+    setTimeout(() => {
+      mainScreen3.style.opacity = '0'
+    }, 300)
+  })
 }
 
 function modalWindow2() {
@@ -107,12 +177,6 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 })
 }
-
-
-// 3-д персонаж
-function ramCharacter() {
-}
-
 
 // слежение за курсором
 function eyeAnimation() {

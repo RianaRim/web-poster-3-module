@@ -72,14 +72,14 @@
     }
 }
 
-/* @keyframes jump {
-    0%, 20%, 80%, 100% {
-        transform: translateY(0);
+@keyframes rotate {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transform: rotateY(180deg);
     }
-    50% {
-        transform: translateY(-30px);
+    10%, 30%, 50%, 70%, 90% {
+        transform: rotateY(-180deg);
     }
-} */
+}
 
 @keyframes fadeIn {
   from {
