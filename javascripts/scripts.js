@@ -16,14 +16,29 @@ eyeAnimation()
 modalWindow()
 modalWindow2()
 modalWindow3()
+modalWindow4()
 // таймер страницы
 timeTracker()
 // появление текста по ховеру
 hoverOpacity()
 hoverOpacity2()
 hoverOpacity3()
+hoverOpacity4()
 
 // появление текста по ховеру
+function hoverOpacity4() {
+  let button = document.querySelector('#ramHelper')
+  let dialog = document.querySelector('.dialog')
+
+  button.addEventListener('mouseenter', () => {
+    dialog.classList.add('visible')
+  })
+
+  button.addEventListener('mouseleave', () => {
+    dialog.classList.remove('visible')
+  })
+}
+
 function hoverOpacity() {
   let button = document.querySelector('.hoverButton_1')
   let quote = document.querySelector('.qoute_1')
@@ -84,6 +99,30 @@ function timeTracker() {
   }
 
   setInterval(updateTimer, 1000)
+}
+
+function modalWindow4() {
+  let text9 = document.querySelector('#text9')
+  let mainScreen4 = document.querySelector('.mainScreen4')
+
+  text9.addEventListener('click', () => {
+    mainScreen4.style.display = 'block'
+  })
+
+  mainScreen4.addEventListener('click', () => {
+    mainScreen4.style.display = 'none'
+  })
+
+  text9.addEventListener('click', () => {
+    mainScreen4.className = 'mainScreen4 fade-in'
+  })
+
+  mainScreen4.addEventListener('click', () => {
+    mainScreen4.className = 'mainScreen4 fade-out'
+    setTimeout(() => {
+      mainScreen4.style.opacity = '0'
+    }, 300)
+  })
 }
 
 function modalWindow3() {
@@ -257,14 +296,14 @@ function changeImageByCursor() {
     let section = document.querySelector('.changeImage')
 
     document.addEventListener('mousemove', (event) => {
-        let cursor_x = event.pageX
-        let cursor_y = event.pageY
+        let cursor_x = event.clientX
+        let cursor_y = event.clientY
 
         x.innerHTML = `X: ${cursor_x}`
         y.innerHTML = `Y: ${cursor_y}`
 
-        let bodySizeX = document.documentElement.clientWidth
-        let bodySizeY = document.documentElement.clientHeight
+        let bodySizeX = window.innerWidth / 2
+        let bodySizeY = window.innerHeight / 2
 
         let img1 = document.querySelector('.imageBox1')
         let img2 = document.querySelector('.imageBox2')

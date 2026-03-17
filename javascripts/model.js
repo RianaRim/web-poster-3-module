@@ -62,7 +62,7 @@ function initThree() {
   {
     const loader = new GLTFLoader()
     loader.load(
-      './3d-model/ramFigure.gltf',
+      './3d-model/ramFigure2.gltf',
       function (gltf) {
         scene.add(gltf.scene)
       },

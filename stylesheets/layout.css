@@ -43,7 +43,7 @@ html {
 
 
 /* задний фон */
-body::after {
+/* body::after {
     content: "";
     position: absolute;
     top: 0;
@@ -56,7 +56,7 @@ body::after {
     height: 3325px;
     opacity: 0.2;
     z-index: -2;
-}
+} */
 
 a{
     text-decoration: none;
@@ -166,8 +166,10 @@ a{
 
 .imageBox {
     position: fixed;
-    top: 23vw;
-    left: 82vw;
+    /* top: 23vw; */
+    /* left: 82vw; */
+    right: 0;
+    bottom: 0;
     width: 17vw;
     height: 26vw;
     transition: 0.3s all ease-in-out;
@@ -210,6 +212,7 @@ a{
     position: relative;
 }
 
+/* экраны по клику */
 .mainScreen1 {
     position: absolute;
     width: 40%;
@@ -350,8 +353,6 @@ a{
     margin-top: 3vw;
 }
 
-
-
 .hoverButton_1, .hoverButton_2, .hoverButton_3 {
     position: absolute;
     width: 5vw;
@@ -369,7 +370,7 @@ a{
 
 .hoverButton_1 {
     top: 14vw;
-    left: 10vw;
+    left: 7vw;
 }
 
 .hoverButton_2 {
@@ -398,6 +399,67 @@ a{
     z-index: -1;
 }
 
+.mainScreen4 {
+    position: absolute;
+    background-color: black;
+    width: 39vw;
+    height: 36vw;
+    left: 33%;
+    top: 15%;
+    display: none;
+    z-index: 50;
+    user-select: none;
+}
+
+.mainScreen4.fade-in {
+  animation: fadeIn 0.3s forwards;
+}
+
+.mainScreen4.fade-out {
+  animation: fadeOut 0.3s forwards;
+}
+
+.contentContainer3 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.imageDiv {
+    width: 95%;
+    padding-left: 1.4vw;
+    margin-top: 3vw;
+}
+
+.textDiv_5 {
+    font-family: 'Grid Type';
+    font-size: 6vw;
+    padding-top: 1vw;
+    padding-left: 1vw;
+    text-align: center;
+    color: white;
+    user-select: none;
+}
+
+.textDiv_6 {
+    font-family: 'Cygre';
+    font-weight: normal;
+    font-size: 1.5vw;
+    color: #444;
+    user-select: none;
+    text-align: center;
+    padding-top: 0.1vw;
+    padding-left: 13vw;
+    margin-bottom: 1vw;
+}
+
+.imageDiv_2 {
+    width: 95%;
+    padding-left: 1.4vw;
+}
+
+/* контент первого экрана */
 .content_1 {
     width: 31vw;
     height: 42vw;
@@ -638,6 +700,19 @@ width: 100%;
     animation-play-state: running;
 }
 
+.dialog {
+    position: absolute;
+    width: 25vw;
+    top: 77.5vw;
+    left: 33.5vw;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.dialog.visible {
+    opacity: 1;
+}
+
 .content_7 {
     width: 100%;
     height: 32vw;
@@ -868,14 +943,17 @@ width: 100%;
 
 .ramSteps {
     position: absolute;
-    width: 300px;
-    height: 312px;
+    width: 22vw;
+    height: 14.8vw;
     background-image: url('/images/3Steps.png');
+    background-repeat: no-repeat;
     animation: ramWalk 0.8s infinite steps(1), 
     ramMove 12s ease-in-out infinite,
     ramRotate 6s linear infinite;
     transform-style: preserve-3d;
     perspective: 1000px;
+    background-size: 300% auto;
+    left: 5%;
 }
 
 .rectangle {
