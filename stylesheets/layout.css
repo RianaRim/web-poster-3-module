@@ -720,9 +720,43 @@ width: 100%;
 
 /* четвёртый экран */
 .forthScreen {
+    position: relative;
     width: 100%;
     height: 50vw;
     user-select: none;
+}
+
+.recSection {
+    position: absolute;
+    width: 100%;
+    height: 50vw;
+}
+
+.greenRec {
+position: absolute;
+width: 2vw;
+height: 2vw;
+padding: 1.3vw;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: all 5s linear;
+background-color: #0ADB81;
+z-index: 3;
+font-family: 'Cygre';
+    font-size: 1.5vw;
+    color: white;
+    user-select: none;
+}
+
+.line {
+  position: absolute;
+  height: clamp(1px, 0.3vw, 0.3vw);
+  background-color: #0ADB81;
+  transform-origin: left center;
+  pointer-events: none;
+  z-index: 2;
+  transition: none;
 }
 
 .content_8 {
@@ -965,4 +999,3 @@ width: 100%;
     background-color: #0ADB81;
 }
 
-/* что-нибудь */

@@ -102,3 +102,18 @@
     transform: translateY(-10px);
   }
 }
+
+.recBlink {
+    animation: recBlink 1s forwards steps(1);
+}
+
+@keyframes recBlink {
+    20%, 40%, 60%, 80% {
+        background-color: white;
+        color: #0ADB81;
+    }
+    10%, 30%, 50%, 70%, 100% {
+        background-color: #0ADB81;
+        color: white;
+    }
+}

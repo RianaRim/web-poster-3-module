@@ -4,10 +4,6 @@ cursorMove()
 links()
 // изменение изображения по курсору
 changeImageByCursor()
-// кликабельные ссылки
-
-// 3-д персонаж
-// ramCharacter()
 // звук барашка
 ramSound()
 // слежение за курсором
@@ -254,9 +250,6 @@ function eyeAnimation() {
  })
 }
 
-// кликабельные ссылки
-
-
 // передвижение кастомного курсора
 function cursorMove() {
   const cursor = document.querySelector('.customCursor')
@@ -335,6 +328,3 @@ function changeImageByCursor() {
         }
     })
 }
-
-
-// звук барана по клику
