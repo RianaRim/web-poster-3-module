@@ -1,0 +1,74 @@
+@media (min-width: 1024px) {
+   body {
+    width: 100%;
+    margin: 0 auto;
+   } 
+   /* рога */
+   .header {
+    width: 80%;
+   }
+   #text1, #text2, #text3, #text4, #text5 {
+    display: none;
+   }
+   .header .baa {
+    font-size: 3vw;
+    padding: 0vw;
+    margin-left: 2vw;
+   }
+   .eye {
+    width: 9.5vw;
+    height: 4.4vw;
+    margin-left: 35vw;
+    margin-top: 1.5vw;
+   }
+   .pupil {
+  width: 3vw;
+  height: 1.3vw;
+   }
+   .glassmorph {
+    width: 119%;
+   }
+   #time {
+    font-size: 2vw;
+    padding-top: 1.5vw;
+    padding-left: 92vw;
+   }
+   /* голова */
+   #littleRam {
+    top: 9vw;
+    left: 43vw;
+   }
+   #littleRam img {
+    width: 150%;
+   }
+   .firstScreen {
+    height: 130vw;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+   }
+   #main {
+    display: none;
+   }
+   .content_1 {
+    width: 100%;
+    height: 10vw;
+    flex-direction: row;
+    flex-wrap: nowrap;
+   }
+   #text6, #text7, #text8, #text9 {
+    margin: 0;
+    padding: 0;
+   }
+   .content_2 {
+    width: 100%;
+    height: 100%;
+   }
+   .ram3D {
+    top: -5vw;
+   }
+   .content_3 {
+    width: 100%;
+    height: 4vw;
+    z-index: 2000;
+   }
+}
