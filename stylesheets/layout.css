@@ -1171,7 +1171,7 @@ a {
   position: absolute;
   width: 22vw;
   height: 14.8vw;
-  background-image: url('/images/3Steps.png');
+  background-image: url('/images/steps3.png');
   background-repeat: no-repeat;
   animation:
     ramWalk 0.8s infinite steps(1),
