@@ -117,3 +117,12 @@
         color: white;
     }
 }
+
+@keyframes scroll-carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-201%);
+  }
+}

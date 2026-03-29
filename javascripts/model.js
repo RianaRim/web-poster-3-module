@@ -4,7 +4,7 @@ import { GLTFLoader } from 'GLTFLoader'
 import { RectAreaLightUniformsLib } from 'RectAreaLightUniformsLib'
 
 document.addEventListener('DOMContentLoaded', () => {
-    initThree()
+  initThree()
 })
 
 function initThree() {
@@ -110,6 +110,8 @@ function initThree() {
   // управление моделькой
   const controls = new OrbitControls(camera, renderer.domElement)
   controls.autoRotate = true
+  controls.maxDistance = 400
+  controls.minDistance = 200
 
   function animate() {
     requestAnimationFrame(animate)

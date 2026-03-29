@@ -1,23 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
   initRecs()
-  initDocument()
-  checkAllConnected()
   cycle()
-  //   rec()
 })
 
 // соединение квадратов
 const state = {
   mouseDown: false,
   currentRec: null,
-  linesShow: Array(14).fill(false)
+  linesShow: Array(9).fill(false)
 }
 function resetState() {
   state.mouseDown = false
   state.currentRec = 0
 }
+
 function resetLinesShow() {
-  state.linesShow = Array(14).fill(false)
+  state.linesShow = Array(9).fill(false)
 }
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min
@@ -72,19 +70,19 @@ function initRec(recElement) {
     state.currentRec = Number(e.target.id.slice(-1))
   })
 
-    recElement.addEventListener('mouseup', (e) => {
+  recElement.addEventListener('mouseup', (e) => {
     if (state.mouseDown && state.currentRec !== null) {
-      const targetId = Number(e.target.id.slice(-1));
+      const targetId = Number(e.target.id.slice(-1))
 
       // Проверяем, что соединяем текущий квадрат со следующим
-      if (targetId === state.currentRec + 1 && state.currentRec < 14) {
-        state.linesShow[state.currentRec] = true;
-        drawLines(); // Сразу перерисовываем линии
+      if (targetId === state.currentRec + 1 && state.currentRec < 9) {
+        state.linesShow[state.currentRec] = true
+        drawLines() // Сразу перерисовываем линии
       }
-       if (state.currentRec + 1 === Number(e.target.id.slice(-1))) {
+      if (state.currentRec + 1 === Number(e.target.id.slice(-1))) {
         state.linesShow[state.currentRec - 1] = true
       }
-      if (state.currentRec !== null && state.currentRec < 14) {
+      if (state.currentRec !== null && state.currentRec < 9) {
         state.linesShow[state.currentRec] = true
       }
       if (state.currentRec - 1 === Number(e.target.id.slice(-1))) {
@@ -100,12 +98,7 @@ function initRec(recElement) {
         state.linesShow[5] &&
         state.linesShow[6] &&
         state.linesShow[7] &&
-        state.linesShow[8] &&
-        state.linesShow[9] &&
-        state.linesShow[10] &&
-        state.linesShow[11] &&
-        state.linesShow[12] &&
-        state.linesShow[13] 
+        state.linesShow[8]  
       ) {
         const recsBlink = document.querySelectorAll('.greenRec')
         recsBlink.forEach((recBlink) => {
@@ -114,9 +107,9 @@ function initRec(recElement) {
       }
     }
 
-    resetState();
-    eraseLine()
-  });
+    resetState()
+    // eraseLine()
+  })
 }
 function removeAnimation() {
   const recsBlink = document.querySelectorAll('.greenRec')
@@ -133,6 +126,12 @@ function mobileCatchRec() {
       state.linesShow[1] = true
       state.linesShow[2] = true
       state.linesShow[3] = true
+      state.linesShow[4] = true
+      state.linesShow[5] = true
+      state.linesShow[6] = true
+      state.linesShow[7] = true
+      state.linesShow[8] = true
+      state.linesShow[9] = true
     })
   })
 }
@@ -167,22 +166,37 @@ function drawLine(e) {
   line.style.transformOrigin = 'left center'
   line.style.transform = `rotate(${angle}rad)`
 }
+
 function drawLines() {
   state.linesShow.forEach((lineState, index) => {
     if (lineState === true) {
       const lineElement = document.getElementById(`line_${index + 1}`)
+      if (!lineElement) {
+        console.warn(`Элемент line_${index + 1} не найден`)
+        return
+      }
 
       const recFrom = document.getElementById(`rec_${index + 1}`)
       const recTo = document.getElementById(`rec_${index + 2}`)
 
+      if (!recFrom || !recTo) {
+        console.warn(
+          `Один из квадратов rec_${index + 1} или rec_${index + 2} не найден`
+        )
+        return
+      }
+
+      const fromRect = recFrom.getBoundingClientRect()
+      const toRect = recTo.getBoundingClientRect()
+
       const x1 = recFrom.getBoundingClientRect().left + recFrom.offsetWidth / 2
-      const y1 = recFrom.offsetTop + recFrom.offsetHeight / 2
+            const y1 = recFrom.offsetTop + recFrom.offsetHeight / 2
 
-      const x2 = recTo.getBoundingClientRect().left + recTo.offsetWidth / 2
-      const y2 = recTo.offsetTop + recTo.offsetHeight / 2
+            const x2 = recTo.getBoundingClientRect().left + recTo.offsetWidth / 2
+            const y2 = recTo.offsetTop + recTo.offsetHeight / 2
 
-      const distance = calcDistance(x1, y1, x2, y2)
-      const angle = calcAngle(x1, y1, x2, y2)
+            const distance = calcDistance(x1, y1, x2, y2)
+            const angle = calcAngle(x1, y1, x2, y2)
 
       lineElement.style.top = `${y1}px`
       lineElement.style.left = `${x1}px`
@@ -226,11 +240,24 @@ function cycle() {
 }
 
 function checkAllConnected() {
-  if (state.linesShow.every((line) => line === true)) {
+ 
+  const totalSquares = document.querySelectorAll('.greenRec').length
+  const requiredLines = totalSquares - 1
+
+  const allConnected = state.linesShow
+    .slice(0, requiredLines) 
+    .every((line) => line === true)
+
+  if (allConnected) {
     const recsBlink = document.querySelectorAll('.greenRec')
     recsBlink.forEach((recBlink) => {
-      recBlink.classList.add('recBlink')
+      recBlink.classList.add('recBlink') 
     })
-    setTimeout(removeAnimation, 3000)
+
+    setTimeout(() => {
+      recsBlink.forEach((recBlink) => {
+        recBlink.classList.remove('recBlink')
+      })
+    }, 3000)
   }
 }

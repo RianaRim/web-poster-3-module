@@ -21,6 +21,397 @@ hoverOpacity2()
 hoverOpacity3()
 hoverOpacity4()
 
+// окошко с подношениями
+offerWindow()
+offerWindow2()
+offerWindow3()
+offerWindow4()
+offerWindow5()
+offerWindow6()
+
+
+// окошко с подношениями
+function offerWindow() {
+    const offer1 = document.querySelector('#offer1')
+    const recSection = document.querySelector('.recSection')
+    const timerDisplay = document.querySelector('#time2')
+    const congratulationsModal = document.querySelector('#congratulationsModal')
+    let timerInterval = null
+    let countdown = 30
+
+    function updateTimerDisplay(seconds) {
+      const minutes = Math.floor(seconds / 60)
+      const secs = seconds % 60
+      timerDisplay.textContent = `${minutes.toString().padStart(1, '0')}:${secs.toString().padStart(2, '0')}`
+    }
+
+    // Функция показа всплывающего окна
+    function showCongratulations() {
+      congratulationsModal.style.display = 'block'
+    }
+
+    // Функция закрытия всплывающего окна
+    function closeModal() {
+      congratulationsModal.style.display = 'none'
+    }
+
+    // Обработчик закрытия модального окна
+    document.getElementById('closeModal').addEventListener('click', closeModal)
+
+    offer1.addEventListener('click', () => {
+      // Сброс состояния
+      countdown = 30
+      updateTimerDisplay(countdown)
+
+      // Показываем секцию и таймер
+      recSection.style.display = 'block'
+      recSection.classList.remove('fade-out')
+      recSection.classList.add('fade-in')
+      timerDisplay.style.display = 'block'
+
+      // Очистка предыдущего таймера
+      if (timerInterval) {
+        clearInterval(timerInterval)
+      }
+
+      // Запуск обратного отсчёта
+      timerInterval = setInterval(() => {
+        countdown--
+        updateTimerDisplay(countdown)
+
+        // Если время вышло
+        if (countdown <= 0) {
+          clearInterval(timerInterval)
+
+          // Скрываем секцию
+          recSection.classList.remove('fade-in')
+          recSection.classList.add('fade-out')
+
+          // Через длительность анимации скрываем полностью и показываем поздравление
+          setTimeout(() => {
+            recSection.style.display = 'none'
+            timerDisplay.style.display = 'none'
+            showCongratulations() // Показываем всплывающее окно
+          }, 2000) // 2 с — длительность fade-out анимации
+        }
+      }, 1000)
+    })
+  }
+function offerWindow2() {
+    const offer2 = document.querySelector('#offer2')
+    const recSection = document.querySelector('.recSection')
+    const timerDisplay = document.querySelector('#time3')
+    const congratulationsModal = document.querySelector('#congratulationsModal')
+    let timerInterval = null
+    let countdown = 20
+
+    function updateTimerDisplay(seconds) {
+      const minutes = Math.floor(seconds / 60)
+      const secs = seconds % 60
+      timerDisplay.textContent = `${minutes.toString().padStart(1, '0')}:${secs.toString().padStart(2, '0')}`
+    }
+
+    function showCongratulations() {
+      congratulationsModal.style.display = 'block'
+    }
+
+    function closeModal() {
+      congratulationsModal.style.display = 'none'
+    }
+
+    document.getElementById('closeModal').addEventListener('click', closeModal)
+
+    offer2.addEventListener('click', () => {
+      
+      countdown = 20
+      updateTimerDisplay(countdown)
+
+      recSection.style.display = 'block'
+      recSection.classList.remove('fade-out')
+      recSection.classList.add('fade-in')
+      timerDisplay.style.display = 'block'
+
+      if (timerInterval) {
+        clearInterval(timerInterval)
+      }
+
+      timerInterval = setInterval(() => {
+        countdown--
+        updateTimerDisplay(countdown)
+
+        if (countdown <= 0) {
+          clearInterval(timerInterval)
+
+          recSection.classList.remove('fade-in')
+          recSection.classList.add('fade-out')
+
+          setTimeout(() => {
+            recSection.style.display = 'none'
+            timerDisplay.style.display = 'none'
+            showCongratulations() 
+          }, 2000) 
+        }
+      }, 1000)
+    })
+  }
+function offerWindow3() {
+    const offer3 = document.querySelector('#offer3')
+    const recSection = document.querySelector('.recSection')
+    const timerDisplay = document.querySelector('#time4')
+    const congratulationsModal = document.querySelector('#congratulationsModal')
+    let timerInterval = null
+    let countdown = 15
+
+    function updateTimerDisplay(seconds) {
+      const minutes = Math.floor(seconds / 60)
+      const secs = seconds % 60
+      timerDisplay.textContent = `${minutes.toString().padStart(1, '0')}:${secs.toString().padStart(2, '0')}`
+    }
+
+    // Функция показа всплывающего окна
+    function showCongratulations() {
+      congratulationsModal.style.display = 'block'
+    }
+
+    // Функция закрытия всплывающего окна
+    function closeModal() {
+      congratulationsModal.style.display = 'none'
+    }
+
+    // Обработчик закрытия модального окна
+    document.getElementById('closeModal').addEventListener('click', closeModal)
+
+    offer3.addEventListener('click', () => {
+      // Сброс состояния
+      countdown = 15
+      updateTimerDisplay(countdown)
+
+      // Показываем секцию и таймер
+      recSection.style.display = 'block'
+      recSection.classList.remove('fade-out')
+      recSection.classList.add('fade-in')
+      timerDisplay.style.display = 'block'
+
+      // Очистка предыдущего таймера
+      if (timerInterval) {
+        clearInterval(timerInterval)
+      }
+
+      // Запуск обратного отсчёта
+      timerInterval = setInterval(() => {
+        countdown--
+        updateTimerDisplay(countdown)
+
+        // Если время вышло
+        if (countdown <= 0) {
+          clearInterval(timerInterval)
+
+          // Скрываем секцию
+          recSection.classList.remove('fade-in')
+          recSection.classList.add('fade-out')
+
+          // Через длительность анимации скрываем полностью и показываем поздравление
+          setTimeout(() => {
+            recSection.style.display = 'none'
+            timerDisplay.style.display = 'none'
+            showCongratulations() // Показываем всплывающее окно
+          }, 2000) // 2 с — длительность fade-out анимации
+        }
+      }, 1000)
+    })
+  }
+function offerWindow4() {
+    const offer4 = document.querySelector('#offer4')
+    const recSection = document.querySelector('.recSection')
+    const timerDisplay = document.querySelector('#time2')
+    const congratulationsModal = document.querySelector('#congratulationsModal')
+    let timerInterval = null
+    let countdown = 30
+
+    function updateTimerDisplay(seconds) {
+      const minutes = Math.floor(seconds / 60)
+      const secs = seconds % 60
+      timerDisplay.textContent = `${minutes.toString().padStart(1, '0')}:${secs.toString().padStart(2, '0')}`
+    }
+
+    // Функция показа всплывающего окна
+    function showCongratulations() {
+      congratulationsModal.style.display = 'block'
+    }
+
+    // Функция закрытия всплывающего окна
+    function closeModal() {
+      congratulationsModal.style.display = 'none'
+    }
+
+    // Обработчик закрытия модального окна
+    document.getElementById('closeModal').addEventListener('click', closeModal)
+
+    offer4.addEventListener('click', () => {
+      // Сброс состояния
+      countdown = 30
+      updateTimerDisplay(countdown)
+
+      // Показываем секцию и таймер
+      recSection.style.display = 'block'
+      recSection.classList.remove('fade-out')
+      recSection.classList.add('fade-in')
+      timerDisplay.style.display = 'block'
+
+      // Очистка предыдущего таймера
+      if (timerInterval) {
+        clearInterval(timerInterval)
+      }
+
+      // Запуск обратного отсчёта
+      timerInterval = setInterval(() => {
+        countdown--
+        updateTimerDisplay(countdown)
+
+        // Если время вышло
+        if (countdown <= 0) {
+          clearInterval(timerInterval)
+
+          // Скрываем секцию
+          recSection.classList.remove('fade-in')
+          recSection.classList.add('fade-out')
+
+          // Через длительность анимации скрываем полностью и показываем поздравление
+          setTimeout(() => {
+            recSection.style.display = 'none'
+            timerDisplay.style.display = 'none'
+            showCongratulations() // Показываем всплывающее окно
+          }, 2000) // 2 с — длительность fade-out анимации
+        }
+      }, 1000)
+    })
+  }
+function offerWindow5() {
+    const offer5 = document.querySelector('#offer5')
+    const recSection = document.querySelector('.recSection')
+    const timerDisplay = document.querySelector('#time3')
+    const congratulationsModal = document.querySelector('#congratulationsModal')
+    let timerInterval = null
+    let countdown = 20
+
+    function updateTimerDisplay(seconds) {
+      const minutes = Math.floor(seconds / 60)
+      const secs = seconds % 60
+      timerDisplay.textContent = `${minutes.toString().padStart(1, '0')}:${secs.toString().padStart(2, '0')}`
+    }
+
+    function showCongratulations() {
+      congratulationsModal.style.display = 'block'
+    }
+
+    function closeModal() {
+      congratulationsModal.style.display = 'none'
+    }
+
+    document.getElementById('closeModal').addEventListener('click', closeModal)
+
+    offer5.addEventListener('click', () => {
+      
+      countdown = 20
+      updateTimerDisplay(countdown)
+
+      recSection.style.display = 'block'
+      recSection.classList.remove('fade-out')
+      recSection.classList.add('fade-in')
+      timerDisplay.style.display = 'block'
+
+      if (timerInterval) {
+        clearInterval(timerInterval)
+      }
+
+      timerInterval = setInterval(() => {
+        countdown--
+        updateTimerDisplay(countdown)
+
+        if (countdown <= 0) {
+          clearInterval(timerInterval)
+
+          recSection.classList.remove('fade-in')
+          recSection.classList.add('fade-out')
+
+          setTimeout(() => {
+            recSection.style.display = 'none'
+            timerDisplay.style.display = 'none'
+            showCongratulations() 
+          }, 2000) 
+        }
+      }, 1000)
+    })
+  }
+function offerWindow6() {
+    const offer6 = document.querySelector('#offer6')
+    const recSection = document.querySelector('.recSection')
+    const timerDisplay = document.querySelector('#time4')
+    const congratulationsModal = document.querySelector('#congratulationsModal')
+    let timerInterval = null
+    let countdown = 15
+
+    function updateTimerDisplay(seconds) {
+      const minutes = Math.floor(seconds / 60)
+      const secs = seconds % 60
+      timerDisplay.textContent = `${minutes.toString().padStart(1, '0')}:${secs.toString().padStart(2, '0')}`
+    }
+
+    // Функция показа всплывающего окна
+    function showCongratulations() {
+      congratulationsModal.style.display = 'block'
+    }
+
+    // Функция закрытия всплывающего окна
+    function closeModal() {
+      congratulationsModal.style.display = 'none'
+    }
+
+    // Обработчик закрытия модального окна
+    document.getElementById('closeModal').addEventListener('click', closeModal)
+
+    offer6.addEventListener('click', () => {
+      // Сброс состояния
+      countdown = 15
+      updateTimerDisplay(countdown)
+
+      // Показываем секцию и таймер
+      recSection.style.display = 'block'
+      recSection.classList.remove('fade-out')
+      recSection.classList.add('fade-in')
+      timerDisplay.style.display = 'block'
+
+      // Очистка предыдущего таймера
+      if (timerInterval) {
+        clearInterval(timerInterval)
+      }
+
+      // Запуск обратного отсчёта
+      timerInterval = setInterval(() => {
+        countdown--
+        updateTimerDisplay(countdown)
+
+        // Если время вышло
+        if (countdown <= 0) {
+          clearInterval(timerInterval)
+
+          // Скрываем секцию
+          recSection.classList.remove('fade-in')
+          recSection.classList.add('fade-out')
+
+          // Через длительность анимации скрываем полностью и показываем поздравление
+          setTimeout(() => {
+            recSection.style.display = 'none'
+            timerDisplay.style.display = 'none'
+            showCongratulations() // Показываем всплывающее окно
+          }, 2000) // 2 с — длительность fade-out анимации
+        }
+      }, 1000)
+    })
+  }
+
+
+
 // появление текста по ховеру
 function hoverOpacity4() {
   let button = document.querySelector('#ramHelper')

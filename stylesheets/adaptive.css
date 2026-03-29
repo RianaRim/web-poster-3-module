@@ -1,46 +1,50 @@
-@media (min-width: 1024px) {
+@media (max-width: 1023px) {
    body {
     width: 100%;
     margin: 0 auto;
    } 
-   /* рога */
+   /* шапка */
    .header {
-    width: 80%;
+    width: 100%;
+    z-index: 10000;
    }
    #text1, #text2, #text3, #text4, #text5 {
     display: none;
    }
    .header .baa {
-    font-size: 3vw;
+    font-size: 4vw;
     padding: 0vw;
     margin-left: 2vw;
    }
    .eye {
     width: 9.5vw;
     height: 4.4vw;
-    margin-left: 35vw;
+    margin-left: 33vw;
     margin-top: 1.5vw;
    }
    .pupil {
-  width: 3vw;
-  height: 1.3vw;
+  width: 4vw;
+  height: 1.8vw;
    }
    .glassmorph {
-    width: 119%;
+    width: 90%;
    }
    #time {
     font-size: 2vw;
     padding-top: 1.5vw;
-    padding-left: 92vw;
+    padding-left: 89vw;
    }
-   /* голова */
+   /* миини баран */
    #littleRam {
     top: 9vw;
     left: 43vw;
    }
    #littleRam img {
-    width: 150%;
+    width: 100%;
+    position: relative;
+    left: 2vw;
    }
+   /* первый экран */
    .firstScreen {
     height: 130vw;
     flex-direction: column-reverse;
@@ -49,26 +53,374 @@
    #main {
     display: none;
    }
+   .imageBox {
+   width: 23vw;
+   height: 34.5vw
+   }
    .content_1 {
     width: 100%;
-    height: 10vw;
+    height: 7vw;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
    }
    #text6, #text7, #text8, #text9 {
-    margin: 0;
+    margin: 2.5vw;
     padding: 0;
    }
    .content_2 {
     width: 100%;
-    height: 100%;
+    height: 82%;
    }
    .ram3D {
-    top: -5vw;
+    top: -18vw;
+   }
+   #ramBack {
+      position: absolute;
+      top: -7vw;
+      left: 0;
    }
    .content_3 {
     width: 100%;
-    height: 4vw;
+    height: 16vw;
     z-index: 2000;
+   }
+   .mainScreen1 {
+      position: absolute;
+      width: 60%;
+      top: 30%;
+      left: 19%;
+   }
+   .mainScreen2 {
+      position: absolute;
+      width: 60%;
+      height: 42.3%;
+      top: 30%;
+      left: 19%;
+   }
+   .mainScreen3 {
+      position: absolute;
+      width: 60%;
+      height: 42.3%;
+      top: 30%;
+      left: 19%;
+   }
+   .contentContainer2 {
+      height: 82%;
+   }
+   .textDiv_3 {
+      margin-left: 1vw;
+   }
+   .animatedDiv {
+      width: 100%;
+      height: 89%;
+   }
+   .animatedDiv img {
+      position: absolute;
+      width: 35vw;
+      height: 29vw;
+   }
+   .hoverButton_1 {
+      width: 20%;
+      height: 6.5%;
+      margin-top: -0.7vw;
+      margin-left: -4vw;
+      border-radius: 0.6vw;
+   }
+   .hoverCursor_1 {
+      font-size: 3vw;
+   }
+   .qoute_1 {
+      position: absolute;
+      top: 6vw;
+      left: 3vw;
+      font-size: 1.4vw;
+      line-height: 1.6vw;
+      /* opacity: 1; */
+      padding: 0;
+   }
+   .hoverButton_2 {
+      width: 20%;
+      height: 6.5%;
+      margin-top: 1.7vw;
+      margin-left: 20vw;
+      border-radius: 0.6vw;
+   }
+   .hoverCursor_2 {
+      font-size: 3vw;
+   }
+   .qoute_2 {
+      position: absolute;
+      top: 8vw;
+      left: 31.3vw;
+      font-size: 1.4vw;
+      line-height: 1.6vw;
+      /* opacity: 1; */
+      padding: 0;
+   }
+   .hoverButton_3 {
+      width: 20%;
+      height: 6.5%;
+      margin-top: 14.3vw;
+      margin-left: -9vw;
+      border-radius: 0.6vw;
+   }
+   .hoverCursor_3 {
+      font-size: 3vw;
+   }
+   .qoute_3 {
+      position: absolute;
+      top: 29vw;
+      left: -17vw;
+      font-size: 1.4vw;
+      line-height: 1.6vw;
+      /* opacity: 1; */
+      padding: 0;
+   }
+   .mainScreen4 {
+      position: absolute;
+      width: 60%;
+      height: 42.3%;
+      top: 30%;
+      left: 19%;
+   }
+   .imageDiv {
+      width: 100%;
+      margin-top: 2vw;
+   }
+   .imageDiv_2 {
+      width: 100%;
+      margin-top: 0.2vw;
+   }
+   .textDiv_5 {
+      font-size: 9.5vw;
+      text-align: center;
+      padding-left: 1.5vw;
+   }
+   .textDiv_6 {
+      font-size: 2.5vw;
+      padding-left: 21vw;
+   }
+   /* второй экран */
+   .content_4 {
+      padding-top: 2vw;
+   }
+   .content_5 {
+      display: none;
+   }
+   .thirdScreen {
+      width: 100%;
+      height: 35vw;
+   }
+   .carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 2vw 0;
+}
+.flipCard {
+   min-height: 31vw;
+}
+.content_6 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 2vw;
+  animation: scroll-carousel 30s linear infinite;
+}
+.content_8 {
+   display: none;
+}
+#ramHelper {
+   position: absolute;
+   width: 20vw;
+   top: 106vw;
+   left: 2vw;
+}
+.dialog {
+   position: absolute;
+   top: 98vw;
+   left: 23vw;
+   width: 34vw;
+   /* opacity: 1; */
+}
+.greenRec {
+   position: absolute;
+  width: 4vw;
+  height: 4vw;
+  padding: 1.3vw;
+  z-index: 3;
+  font-size: 2vw;
+  user-select: none;
+}
+.modal-content {
+   max-width: 450px;
+}
+.modal-content h3 {
+   font-size: 2.4vw;
+}
+#closeModal {
+   padding: 13px 30px;
+   border-radius: 8px;
+   font-size: 2vw;
+}
+.forthScreen {
+   height: 90vw;
+}
+#time2 {
+   font-size: 2.3vw;
+   top: 63vw;
+   left: 15vw;
+}
+#time3 {
+   font-size: 2.3vw;
+   top: 83vw;
+   left: 47vw;
+}
+#time4 {
+   font-size: 2.3vw;
+   top: 63vw;
+   left: 80vw;
+}
+.content_9 {
+   height: 56vw;
+}
+#text13 {
+   margin-top: 40vw;
+}
+#offer1, #offer2, #offer3 {
+   display: none;
+}
+#offer4, #offer5, #offer6 {
+   width: 28%;
+   opacity: 1;
+   position: absolute;
+   transform: translateY(0);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+#offer4:hover {
+   transform: translateY(-15px);
+    box-shadow: 0 10px 25px rgba(0, 255, 157, 0.888);
+}
+#offer5:hover {
+   transform: translateY(-15px);
+    box-shadow: 0 10px 25px rgba(0, 255, 157, 0.888);
+}
+#offer6:hover {
+   transform: translateY(-15px);
+    box-shadow: 0 10px 25px rgba(0, 255, 157, 0.888);
+}
+#offer4 {
+   position: absolute;
+   height: 53vw;
+   left: 3vw;
+   top: 3.5vw;
+}
+#offer5 {
+   position: absolute;
+   height: 53vw;
+   left: 35.5vw;
+   top: 23.5vw;
+}
+#offer6 {
+   position: absolute;
+   height: 53vw;
+   left: 67.5vw;
+   top: 3.5vw;
+}
+.content_11 {
+   height: 6vw;
+   padding-left: 6vw;
+   padding-right: 6vw;
+}
+#text15 {
+   font-size: 2vw;
+   margin-top: 2vw;
+   margin-left: 2.5vw;
+}
+#text16 {
+   font-size: 2vw;
+   margin-top: 41vw;
+   margin-left: 13.5vw;
+}
+#text17 {
+   font-size: 2vw;
+   margin-top: 2vw;
+   margin-left: 15.5vw;
+}
+/* подвал */
+.content_12 {
+   display: none;
+}
+.content_13 {
+   height: 14vw;
+   margin-top: 2vw;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+#text18, #text19, #text20 {
+   font-size: 2.6vw;
+}
+#text21, #text22, #text23, #text24, #text25 {
+   font-size: 2.6vw;
+}
+#text25 {
+   line-height: 2.3vw;
+}
+#text26 {
+   position: absolute;
+   top: 277vw;
+   left: 68.5vw;
+   font-size: 1.3vw;
+   line-height: 1.5vw;
+}
+
+.rectangle {
+   position: absolute;
+   top: 299.5vw;
+   left: 16.7vw;
+   width: 81.2%;
+}
+}
+@media (max-width: 700px) {
+   .secondScreen {
+      height: 16vw;
+   }
+   #text11 {
+      font-size: 16vw;
+   }
+   .content_13 {
+      height: 18vw;
+      margin-top: 10vw;
+   }
+   #text18, #text19, #text20 {
+      font-size: 3vw;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.1vw;
+      gap: 1vw;
+   }
+   #text21, #text22, #text23, #text24 {
+      font-size: 3.7vw;
+      margin-top: 0.5vw;
+   }
+   #text24 {
+      margin-top: 0vw;
+   }
+   #text25 {
+      font-size: 2.6vw;
+   }
+   #text26 {
+      position: absolute;
+      font-size: 1.5vw;
+      top: 290vw;
+      left: 71.5vw;
+   }
+   .rectangle {
+      position: absolute;
+      top: 316.5vw;
+      left: 16.7vw;
+      width: 82%;
    }
 }
